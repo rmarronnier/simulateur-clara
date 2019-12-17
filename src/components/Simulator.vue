@@ -1,5 +1,9 @@
 <template>
-  <v-container></v-container>
+  <v-container>
+    **breadcrumb**
+    <!-- <BreadCrumb> -->
+    <router-view></router-view>
+  </v-container>
 </template>
 
 <script>

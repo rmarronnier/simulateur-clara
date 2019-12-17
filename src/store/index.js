@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Situation from './modules/Situation'
-import Results from './modules/Results'
-import Filters from './modules/Filters'
+import Situation from './modules/situation'
+import Results from './modules/results'
+import Filters from './modules/filters'
 
 
 Vue.use(Vuex)
