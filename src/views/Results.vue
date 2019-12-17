@@ -1,6 +1,9 @@
 <template>
   <v-container>
-    **Imprimer**
+    <v-btn>
+      Imprimer
+      <v-icon right>mdi-printer</v-icon>
+    </v-btn>
     <v-row>
       <v-col cols="6" md="4">
         <v-content>

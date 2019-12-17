@@ -1,7 +1,7 @@
 <template>
   <v-card>
     Vous ne pouvez pas bénéficier de
-    **Voir**
+    <v-btn>Voir</v-btn>
     <v-expansion-panels hidden>
       <v-expansion-panel v-for="(item,i) in 5" :key="i">
         <v-expansion-panel-header>Item</v-expansion-panel-header>
