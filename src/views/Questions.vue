@@ -1,14 +1,21 @@
  <template>
   <v-content>
     <v-card>
-      <router-view></router-view>
+      <v-form>
+        <router-view></router-view>
+        <QuestionButtons></QuestionButtons>
+      </v-form>
     </v-card>
   </v-content>
 </template>
  
  <script>
+import QuestionButtons from "@/components/QuestionButtons";
 export default {
-  name: "Questions"
+  name: "Questions",
+  components: {
+    QuestionButtons
+  }
 };
 </script>
  

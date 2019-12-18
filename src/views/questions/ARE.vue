@@ -1,8 +1,8 @@
  <template>
-  <v-form>
+  <v-card>
     Quel est le montant de cette allocation ?
     <v-text-field single-line type="number" label="Montant par mois"></v-text-field>
-  </v-form>
+  </v-card>
 </template>
  
  <script>

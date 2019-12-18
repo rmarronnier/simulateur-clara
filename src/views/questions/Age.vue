@@ -1,8 +1,8 @@
  <template>
-  <v-form>
+  <v-card>
     Quel est votre âge ?
     <v-text-field single-line type="number"></v-text-field>
-  </v-form>
+  </v-card>
 </template>
  
  <script>

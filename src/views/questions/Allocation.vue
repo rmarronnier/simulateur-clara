@@ -1,5 +1,5 @@
  <template>
-  <v-form>
+  <v-card>
     Quelle allocation percevez-vous actuellement ?
     <v-radio-group v-model="radios">
       <v-radio label="Choix 1" value="radio-1"></v-radio>
@@ -9,7 +9,7 @@
       <v-radio label="Choix 5" value="radio-5"></v-radio>
       <v-radio label="Choix 6" value="radio-6"></v-radio>
     </v-radio-group>
-  </v-form>
+  </v-card>
 </template>
  
  <script>
