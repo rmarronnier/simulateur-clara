@@ -1,4 +1,4 @@
-import ClaraService from "@/api/clara";
+//import ClaraService from "@/api/clara";
 
 export default {
     state: {
@@ -22,21 +22,21 @@ export default {
         }
     },
     actions: {
-        getFilters({ commit }) {
-            // promise + fetch + API call
-        },
-        getResults({ commit, dispatch }) {
-            // promise + fetch + API call
-            this.$store.commit("updateChanged", false)
-        },
+        // getFilters({ commit }) {
+        //     // promise + fetch + API call
+        // },
+        // getResults({ commit, dispatch }) {
+        //     // promise + fetch + API call
+        //     this.$store.commit("updateChanged", false)
+        // },
     },
     getters: {
         eligible: state => state.eligible,
-        eligible_quantity: state => state.eligible.length(),
+        eligible_quantity: state => state.eligible.length,
         non_eligible: state => state.nonEligible,
-        non_eligible_quantity: state => state.nonEligible.length(),
+        non_eligible_quantity: state => state.nonEligible.length,
         //uncertain: state => state.uncertain,
         filters: state => state.filters,
-        filters_quantity: state => state.filters.length(),
+        filters_quantity: state => state.filters.length,
     },
 }

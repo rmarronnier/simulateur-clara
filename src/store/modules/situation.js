@@ -1,4 +1,4 @@
-import ClaraService from "@/api/clara";
+//import ClaraService from "@/api/clara";
 
 export default {
     state: {
@@ -48,9 +48,9 @@ export default {
 
     },
     actions: {
-        submitInscription({ commit }, inscription_period) {
+        // submitInscription({ commit }, inscription_period) {
 
-        },
+        // },
         submitAddress({ commit, state }, location_citycode) {
             if (location_citycode != state.location_citycode) {
                 commit('updateLocationCitycode', location_citycode)
@@ -63,7 +63,6 @@ export default {
                 commit('updateAge', age)
                 commit('updateChanged', true)
             }
-            this.$router.push('grade')
         },
         submitAllocation({ commit, state }, allocation_type) {
             if (allocation_type != state.allocation_type) {

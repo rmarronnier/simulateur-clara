@@ -1,7 +1,7 @@
  <template>
   <v-row>
     <v-btn @click="back">Revenir</v-btn>
-    <v-btn @click="submit">Continuer</v-btn>
+    <v-btn @click="submitClick" type="submit">Continuer</v-btn>
   </v-row>
 </template>
  
@@ -11,6 +11,9 @@ export default {
   methods: {
     back() {
       this.$router.go(-1);
+    },
+    submitClick() {
+      this.$emit("submit");
     }
   }
 };

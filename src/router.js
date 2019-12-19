@@ -68,7 +68,7 @@ export default new Router({
       ]
     },
     {
-      path: '/aides-possibles',
+      path: '/resultats',
       name: 'results',
       component: Results
     },

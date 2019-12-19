@@ -1,5 +1,5 @@
  <template>
-  <v-card>
+  <v-form>
     Quel est le diplôme le plus élevé que vous ayez obtenu ?
     <v-radio-group v-model="radios">
       <v-radio label="Choix 1" value="radio-1"></v-radio>
@@ -9,12 +9,23 @@
       <v-radio label="Choix 5" value="radio-5"></v-radio>
       <v-radio label="Choix 6" value="radio-6"></v-radio>
     </v-radio-group>
-  </v-card>
+    <QuestionButtons @submit="submit"></QuestionButtons>
+  </v-form>
 </template>
  
  <script>
+import QuestionButtons from "@/components/QuestionButtons";
 export default {
-  name: "Grade"
+  name: "Grade",
+  components: {
+    QuestionButtons
+  },
+  methods: {
+    submit() {
+      //this.$store.dispatch("submitDiploma", this.??);
+      this.$router.push("votre-adresse");
+    }
+  }
 };
 </script>
  
