@@ -6,16 +6,13 @@
     <v-checkbox v-model="selected" label="Choix 2" value="John"></v-checkbox>
     <v-checkbox v-model="selected" label="Choix 3" value="John"></v-checkbox>
     <v-checkbox v-model="selected" label="Choix 4" value="John"></v-checkbox>
-    <QuestionButtons @submit="submit"></QuestionButtons>
+    <v-btn @click="back">Revenir</v-btn>
+    <v-btn v-bind:disabled="!validity" type="submit">Continuer</v-btn>
   </v-form>
 </template>
  
  <script>
-import QuestionButtons from "@/components/QuestionButtons";
 export default {
-  components: {
-    QuestionButtons
-  },
   name: "Other",
   methods: {
     submit() {

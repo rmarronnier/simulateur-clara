@@ -9,16 +9,13 @@
       <v-radio label="Choix 5" value="radio-5"></v-radio>
       <v-radio label="Choix 6" value="radio-6"></v-radio>
     </v-radio-group>
-    <QuestionButtons @submit="submit"></QuestionButtons>
+    <v-btn @click="back">Revenir</v-btn>
+    <v-btn v-bind:disabled="!validity" type="submit">Continuer</v-btn>
   </v-form>
 </template>
  
  <script>
-import QuestionButtons from "@/components/QuestionButtons";
 export default {
-  components: {
-    QuestionButtons
-  },
   name: "Allocation",
   methods: {
     submit() {

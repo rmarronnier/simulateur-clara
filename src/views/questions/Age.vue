@@ -1,47 +1,44 @@
  <template>
-  <v-form>
+  <v-form @submit.prevent="submitAge" ref="form" v-model="validity" :lazy-validation="lazy">
     Quel est votre âge ?
     <v-text-field
+      required
+      autofocus
       v-model.number="age"
-      single-line
       type="number"
-      v-validate="'required|min:16'"
-      :rules="rules"
+      min="0"
+      :rules="[rules.min]"
     ></v-text-field>
-    <QuestionButtons @submit="submit"></QuestionButtons>
+    <v-btn @click="back">Revenir</v-btn>
+    <v-btn v-bind:disabled="!validity" type="submit">Continuer</v-btn>
   </v-form>
 </template>
  
  <script>
-import QuestionButtons from "@/components/QuestionButtons";
 export default {
   name: "Age",
-  components: {
-    QuestionButtons
-  },
-  computed: {
-    age: {
-      get() {
-        return this.$store.state.situation.age;
-      },
-      set(value) {
-        this.$store.dispatch("submitAge", value);
-      }
-    }
+  created() {
+    this.age = this.$store.state.situation.age;
   },
   data: () => ({
-    rules: [
-      value => !!value || "Required."
-      // value => value || >= 15 || 'doit être supérieur ou égal à 16',
-      // value => {
-      //   const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      //   return pattern.test(value) || 'Invalid e-mail.'
-      //},
-    ]
+    age: 0,
+    validity: false,
+    rules: {
+      min: v => v >= 16 || "doit être supérieur ou égal à 16"
+    }
   }),
   methods: {
-    submit() {
-      //this.$store.dispatch("submitAge", this.age);
+    validate() {
+      if (this.$refs.form.validate()) {
+        this.validity = true;
+      }
+    },
+    back() {
+      this.$router.go(-1);
+    },
+    submitAge() {
+      this.validate();
+      this.$store.dispatch("submitAge", this.age);
       this.$router.push("votre-diplome");
     }
   }

@@ -6,16 +6,13 @@
       <v-radio label="Moins d'un an" value="less_than_year"></v-radio>
       <v-radio label="Plus d'un an" value="more_than_a_year"></v-radio>
     </v-radio-group>
-    <QuestionButtons @submit="submit"></QuestionButtons>
+    <v-btn @click="back">Revenir</v-btn>
+    <v-btn v-bind:disabled="!validity" type="submit">Continuer</v-btn>
   </v-form>
 </template>
  
  <script>
-import QuestionButtons from "@/components/QuestionButtons";
 export default {
-  components: {
-    QuestionButtons
-  },
   name: "Inscription",
   methods: {
     submit() {

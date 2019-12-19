@@ -5,16 +5,13 @@
       <v-radio label="Choix 1" value="radio-1"></v-radio>
       <v-radio label="Choix 2" value="radio-2"></v-radio>
     </v-radio-group>
-    <QuestionButtons @submit="submit"></QuestionButtons>
+    <v-btn @click="back">Revenir</v-btn>
+    <v-btn v-bind:disabled="!validity" type="submit">Continuer</v-btn>
   </v-form>
 </template>
  
  <script>
-import QuestionButtons from "@/components/QuestionButtons";
 export default {
-  components: {
-    QuestionButtons
-  },
   name: "Category",
   methods: {
     submit() {
