@@ -12,7 +12,6 @@ export default {
         age: 0,
         location_citycode: "",
         category: "",
-
     },
     mutations: {
         updateChanged(state, changed) {

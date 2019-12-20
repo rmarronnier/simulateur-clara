@@ -2,8 +2,17 @@
   <v-form @submit.prevent="submitAddress" ref="formAddress" v-model="validity">
     Quel est votre code postal de votre lieu de résidence ?
     Code postal - facultatif
-    <v-alert>Plus que 2 questions avant d'obtenir vos résultats</v-alert>
-    <v-text-field autofocus v-model.number="address" type="number" label="Exemple : 44220"></v-text-field>
+    <v-row>
+      <v-col>
+        <v-text-field autofocus v-model.number="address" type="number" label="Exemple : 44220"></v-text-field>
+      </v-col>
+      <v-col>
+        <v-alert type="info">
+          <strong>Plus que 2 questions</strong>
+          <br />avant d'obtenir vos résultats
+        </v-alert>
+      </v-col>
+    </v-row>
     <v-btn @click="back">Revenir</v-btn>
     <v-btn v-bind:disabled="!validity" type="submit">Continuer</v-btn>
   </v-form>
