@@ -1,9 +1,9 @@
  <template>
-  <v-form>
+  <v-form @submit.prevent="submitAddress" ref="formAddress" v-model="validity">
     Quel est votre code postal de votre lieu de résidence ?
     Code postal - facultatif
-    **Plus que 2 questions avant d'obtenir vos résultats**
-    <v-text-field single-line type="number" label="Exemple : 44220"></v-text-field>
+    <v-alert>Plus que 2 questions avant d'obtenir vos résultats</v-alert>
+    <v-text-field autofocus v-model.number="address" type="number" label="Exemple : 44220"></v-text-field>
     <v-btn @click="back">Revenir</v-btn>
     <v-btn v-bind:disabled="!validity" type="submit">Continuer</v-btn>
   </v-form>
@@ -12,12 +12,25 @@
  <script>
 export default {
   name: "Address",
+  created() {
+    this.address = this.$store.state.situation.location_citycode;
+  },
+  data: () => ({
+    address: 0,
+    validity: false
+  }),
   methods: {
+    validate() {
+      if (this.$refs.formAddress.validate()) {
+        this.validity = true;
+      }
+    },
     back() {
       this.$router.go(-1);
     },
-    submit() {
-      //this.$store.dispatch("submitAddress", this.??);
+    submitAddress() {
+      this.validate();
+      this.$store.dispatch("submitAddress", this.address);
       this.$router.push("autres-situations");
     }
   }

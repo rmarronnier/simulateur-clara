@@ -56,7 +56,7 @@ export default {
                 commit('updateLocationCitycode', location_citycode)
                 commit('updateChanged', true)
             }
-            this.$router.push('other')
+            //  this.$router.push('other')
         },
         submitAge({ commit, state }, age) {
             if (age != state.age) {
@@ -69,34 +69,43 @@ export default {
                 commit('updateAllocationType', allocation_type)
                 commit('updateChanged', true)
             }
-            this.$router.push('ARE')
+            //  this.$router.push('ARE')
         },
         submitARE({ commit, state }, monthly_allocation_value) {
             if (monthly_allocation_value != state.monthly_allocation_value) {
                 commit('updateMonthlyAllocationValue', monthly_allocation_value)
                 commit('updateChanged', true)
             }
-            this.$router.push('age') //est-ce vraiment nécessaire si l'âge est déjà renseigné ?
+            // this.$router.push('age') //est-ce vraiment nécessaire si l'âge est déjà renseigné ?
         },
         submitCategory({ commit, state }, category) {
             if (category != state.category) {
                 commit('updateCategory', category)
                 commit('updateChanged', true)
             }
-            this.$router.push('allocation')
+            //this.$router.push('allocation')
         },
         submitGrade({ commit, state }, diploma) {
             if (diploma != state.diploma) {
                 commit('updateDiploma', diploma)
                 commit('updateChanged', true)
             }
-            this.$router.push('address')
         },
-        submitOther({ commit, state }, disabled, spectacle) {
+        submitDisabled({ commit, state }, disabled) {
             if (disabled != state.disabled) {
                 commit('updateDisabled', disabled)
                 commit('updateChanged', true)
             }
+            //if (state.filters.length == 0) { put those actions in the result component when loaded.
+            // dispatch('getFilters')
+            // //}
+            // dispatch('getResults')
+            // dispatch('getEligible')
+            // dispatch('getNonEligible')
+            //dispatch('getUncertain') ???
+            //this.$router.push('results')
+        },
+        submitSpectacle({ commit, state }, spectacle) {
             if (spectacle != state.spectacle) {
                 commit('updateSpectacle', spectacle)
                 commit('updateChanged', true)
@@ -108,7 +117,7 @@ export default {
             // dispatch('getEligible')
             // dispatch('getNonEligible')
             //dispatch('getUncertain') ???
-            this.$router.push('results')
+            //this.$router.push('results')
         },
     },
 

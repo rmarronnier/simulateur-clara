@@ -1,5 +1,5 @@
  <template>
-  <v-form @submit.prevent="submitGrade" ref="formGrade" v-model="validity">
+  <v-form @submit.prevent="submitDiploma" ref="formGrade" v-model="validity">
     Quel est le diplôme le plus élevé que vous ayez obtenu ?
     <v-radio-group required :rules="rules" v-model="diploma">
       <v-radio autofocus label="Bac +4 et + (Master) / diplômes d’ingénieur" value="level_1"></v-radio>
@@ -35,7 +35,7 @@ export default {
     back() {
       this.$router.go(-1);
     },
-    submitGrade() {
+    submitDiploma() {
       this.validate();
       this.$store.dispatch("submitGrade", this.diploma);
       this.$router.push("votre-adresse");

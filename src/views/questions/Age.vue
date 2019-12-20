@@ -1,5 +1,5 @@
  <template>
-  <v-form @submit.prevent="submitAge" ref="form" v-model="validity" :lazy-validation="lazy">
+  <v-form @submit.prevent="submitAge" ref="formAge" v-model="validity" :lazy-validation="lazy">
     Quel est votre âge ?
     <v-text-field
       required
@@ -29,7 +29,7 @@ export default {
   }),
   methods: {
     validate() {
-      if (this.$refs.form.validate()) {
+      if (this.$refs.formAge.validate()) {
         this.validity = true;
       }
     },

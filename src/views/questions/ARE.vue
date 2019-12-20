@@ -24,7 +24,7 @@ export default {
   data: () => ({
     monthly_allocation_value: null,
     validity: false,
-    rules: [v => !!v || "doit être renseignée"]
+    rules: [v => !!v || "doit être renseigné"]
   }),
   methods: {
     validate() {
