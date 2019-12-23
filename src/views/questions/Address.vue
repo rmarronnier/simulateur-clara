@@ -58,6 +58,7 @@ export default {
     citycode: null,
     validity: false,
     results: [],
+    isLoading: false,
     search: null,
     model: null
   }),
@@ -111,13 +112,14 @@ export default {
 
       // Lazily load input items
       BANService(this.address)
-        .then(res => res.json())
-        .then(res => {
-          this.results = res.features;
-        })
-        // .catch(err => {
-        //   //console.log(err);
+        .then(res => alert(res.type))
+        // res.json())
+        // .then(results => {
+        //   this.results = results.features;
         // })
+        // // .catch(err => {
+        // //   //console.log(err);
+        // // })
         .finally(() => (this.isLoading = false));
     }
   }

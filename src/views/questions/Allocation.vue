@@ -75,8 +75,11 @@ export default {
     submitAllocation() {
       this.validate();
       this.$store.dispatch("submitAllocation", this.allocation_type);
-      //if value != none OR !retraite...
-      this.$router.push("montant-ARE");
+      if (this.allocation_type != "none") {
+        this.$router.push("montant-ARE");
+      } else {
+        this.$router.push("votre-age");
+      }
     }
   }
 };
