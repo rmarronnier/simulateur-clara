@@ -1,8 +1,6 @@
  <template>
   <v-content>
-    <v-card>
-      <router-view></router-view>
-    </v-card>
+    <router-view></router-view>
   </v-content>
 </template>
  

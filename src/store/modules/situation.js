@@ -74,7 +74,7 @@ export default {
                 ZRRService(location_citycode)
                     .then(res => res.json())
                     .then(res => {
-                        dispatch('submitZRR', res.records.first.fields.zrr_2017);
+                        dispatch('submitZRR', res.records[0].fields.zrr_2017);
                     })
             }
         },
@@ -159,6 +159,7 @@ export default {
         age: state => state.age,
         address: state => state.address,
         location_citycode: state => state.location_citycode,
+        zrr: state => state.zrr,
         category: state => state.category,
 
     }

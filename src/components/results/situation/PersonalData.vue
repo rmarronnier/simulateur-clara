@@ -40,13 +40,14 @@ export default {
   created() {
     this.age = this.$store.state.situation.age;
     this.diploma = this.$store.state.situation.diploma;
-    this.city = this.$store.state.situation.location_citycode;
+    this.city = this.$store.state.situation.address;
+    this.zrr = this.$store.state.situation.zrr;
   },
   data: () => ({
     age: 0,
     diploma: "",
     city: 0,
-    zrr: "indisponible",
+    zrr: "Non renseigné",
     prioritary: "vérifier"
   })
 };
