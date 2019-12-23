@@ -34,8 +34,11 @@ export default {
     submitInscription() {
       this.validate();
       this.$store.dispatch("submitInscription", this.inscription);
-      // if choice != non inscrit
-      this.$router.push("categorie");
+      if (this.inscription != "not_registred") {
+        this.$router.push("categorie");
+      } else {
+        this.$router.push("votre-allocation");
+      }
     }
   }
 };

@@ -1,4 +1,4 @@
-//import ClaraService from "@/api/clara";
+import ZRRService from "@/services/zrr";
 
 export default {
     state: {
@@ -10,7 +10,9 @@ export default {
         allocation_type: "",
         monthly_allocation_value: 0,
         age: 0,
+        address: "",
         location_citycode: "",
+        zrr: "non renseigné",
         category: "",
     },
     mutations: {
@@ -38,8 +40,14 @@ export default {
         updateAge(state, age) {
             state.age = age
         },
+        updateAddress(state, address) {
+            state.address = address
+        },
         updateLocationCitycode(state, location_citycode) {
             state.location_citycode = location_citycode
+        },
+        updateZRR(state, zrr) {
+            state.zrr = zrr
         },
         updateCategory(state, category) {
             state.category = category
@@ -47,15 +55,34 @@ export default {
 
     },
     actions: {
-        // submitInscription({ commit }, inscription_period) {
-
-        // },
-        submitAddress({ commit, state }, location_citycode) {
+        submitInscription({ commit, state }, inscription_period) {
+            if (inscription_period != state.inscription_period) {
+                commit('updateInscriptionPeriod', inscription_period)
+                commit('updateChanged', true)
+            }
+        },
+        submitAddress({ commit, state }, address) {
+            if (address != state.address) {
+                commit('updateAddress', address)
+                commit('updateChanged', true)
+            }
+        },
+        submitCitycode({ commit, dispatch, state }, location_citycode) {
             if (location_citycode != state.location_citycode) {
                 commit('updateLocationCitycode', location_citycode)
                 commit('updateChanged', true)
+                ZRRService(location_citycode)
+                    .then(res => res.json())
+                    .then(res => {
+                        dispatch('submitZRR', res.records.first.fields.zrr_2017);
+                    })
             }
-            //  this.$router.push('other')
+        },
+        submitZRR({ commit, state }, zrr) {
+            if (zrr != state.zrr) {
+                commit('updateZRR', zrr)
+                commit('updateChanged', true)
+            }
         },
         submitAge({ commit, state }, age) {
             if (age != state.age) {
@@ -130,6 +157,7 @@ export default {
         allocation_type: state => state.allocation_type,
         monthly_allocation_value: state => state.monthly_allocation_value,
         age: state => state.age,
+        address: state => state.address,
         location_citycode: state => state.location_citycode,
         category: state => state.category,
 

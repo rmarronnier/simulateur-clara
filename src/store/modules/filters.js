@@ -1,12 +1,12 @@
-import ClaraService from "@/api/clara";
+// import ClaraService from "@/services/clara";
 
-export default {
-    state: {
+// export default {
+//     state: {
 
-    },
-    mutations: {
+//     },
+//     mutations: {
 
-    },
-    actions: {
-    }
-}
+//     },
+//     actions: {
+//     }
+// }
