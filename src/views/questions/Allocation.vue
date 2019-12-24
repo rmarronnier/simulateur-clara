@@ -1,41 +1,53 @@
  <template>
-  <v-form @submit.prevent="submitAllocation" ref="formAllocation" v-model="validity">
-    Quelle allocation percevez-vous actuellement ?
-    <v-row>
-      <v-col>
-        <v-radio-group required :rules="rules" v-model="allocation_type">
-          <v-radio autofocus label="Une prestation d’assurance chômage : ARE / ASP" value="ARE_ASP"></v-radio>
-          <v-radio
-            label="Une prestation de solidarité : ASS / AER / APS / AS-FNE"
-            value="ASS_AER_ATA_APS_ASFNE"
-          ></v-radio>
-          <v-radio
-            label="Une autre indemnité parmi les suivantes : RPS / RFPE / RFF / pension de retraite"
-            value="RPS_RFPA_RFF_PENSION"
-          ></v-radio>
-          <v-radio label="Le RSA" value="RSA"></v-radio>
-          <v-radio label="L’AAH" value="AAH"></v-radio>
-          <v-radio label="Je ne suis pas indemnisé•e" value="none"></v-radio>
-        </v-radio-group>
-      </v-col>
-      <v-col>
-        <v-card color="secondary">
-          <v-list class="overflow-y-auto" max-height="400" flat color="lime lighten-4">
-            <v-subheader>Aide : Liste complète des allocations</v-subheader>
-            <v-list-item-group v-model="allocations" color="primary">
-              <v-list-item v-for="i in allocations" :key="i">
-                <v-list-item-content>
-                  <v-list-item-title v-text="i"></v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </v-list-item-group>
-          </v-list>
-        </v-card>
-      </v-col>
-    </v-row>
-    <v-btn @click="back">Revenir</v-btn>
-    <v-btn v-bind:disabled="!validity" type="submit">Continuer</v-btn>
-  </v-form>
+  <v-card align="center">
+    <v-form @submit.prevent="submitAllocation" ref="formAllocation" v-model="validity">
+      Quelle allocation percevez-vous actuellement ?
+      <v-row>
+        <v-col>
+          <v-radio-group required :rules="rules" v-model="allocation_type">
+            <v-radio
+              autofocus
+              label="Une prestation d’assurance chômage : ARE / ASP"
+              value="ARE_ASP"
+            ></v-radio>
+            <v-radio
+              label="Une prestation de solidarité : ASS / AER / APS / AS-FNE"
+              value="ASS_AER_ATA_APS_ASFNE"
+            ></v-radio>
+            <v-radio
+              label="Une autre indemnité parmi les suivantes : RPS / RFPE / RFF / pension de retraite"
+              value="RPS_RFPA_RFF_PENSION"
+            ></v-radio>
+            <v-radio label="Le RSA" value="RSA"></v-radio>
+            <v-radio label="L’AAH" value="AAH"></v-radio>
+            <v-radio label="Je ne suis pas indemnisé•e" value="none"></v-radio>
+          </v-radio-group>
+        </v-col>
+        <v-col>
+          <v-card color="secondary">
+            <v-list class="overflow-y-auto" max-height="400" flat color="lime lighten-4">
+              <v-subheader>Aide : Liste complète des allocations</v-subheader>
+              <v-list-item-group v-model="allocations" color="primary">
+                <v-list-item v-for="i in allocations" :key="i">
+                  <v-list-item-content>
+                    <v-list-item-title v-text="i"></v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-btn x-large class="ma-2" color="#96a8b2" @click="back">Revenir</v-btn>
+      <v-btn
+        x-large
+        class="ma-2"
+        color="secondary"
+        v-bind:disabled="!validity"
+        type="submit"
+      >Continuer</v-btn>
+    </v-form>
+  </v-card>
 </template>
  
  <script>

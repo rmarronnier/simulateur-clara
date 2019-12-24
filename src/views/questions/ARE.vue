@@ -1,18 +1,26 @@
  <template>
-  <v-form @submit.prevent="submitARE" ref="formARE" v-model="validity" :lazy-validation="lazy">
-    Quel est le montant de cette allocation ?
-    <v-text-field
-      v-model.number="monthly_allocation_value"
-      autofocus
-      required
-      :rules="rules"
-      min="0"
-      type="number"
-      label="Montant par mois"
-    ></v-text-field>
-    <v-btn @click="back">Revenir</v-btn>
-    <v-btn v-bind:disabled="!validity" type="submit">Continuer</v-btn>
-  </v-form>
+  <v-card align="center">
+    <v-form @submit.prevent="submitARE" ref="formARE" v-model="validity" :lazy-validation="lazy">
+      Quel est le montant de cette allocation ?
+      <v-text-field
+        v-model.number="monthly_allocation_value"
+        autofocus
+        required
+        :rules="rules"
+        min="0"
+        type="number"
+        label="Montant par mois"
+      ></v-text-field>
+      <v-btn x-large class="ma-2" color="#96a8b2" @click="back">Revenir</v-btn>
+      <v-btn
+        x-large
+        class="ma-2"
+        color="secondary"
+        v-bind:disabled="!validity"
+        type="submit"
+      >Continuer</v-btn>
+    </v-form>
+  </v-card>
 </template>
  
  <script>

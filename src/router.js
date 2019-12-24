@@ -15,7 +15,7 @@ Vue.use(Router)
 
 
 export default new Router({
-
+  // https://alligator.io/vuejs/vue-router-modify-head/ to change title and metadata
   routes: [
     {
       path: '/',

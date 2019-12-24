@@ -11,4 +11,17 @@ export default {
 </script>
  
  <style>
+.v-input--selection-controls.v-input .v-label {
+  color: black;
+  font-size: 24px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.v-text-field {
+  font-size: 24px;
+}
+
+v-card-title {
+  justify-content: center;
+}
 </style>

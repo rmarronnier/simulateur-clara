@@ -5,6 +5,7 @@ export default {
         changed: false,
         disabled: false,
         spectacle: false,
+        manager: false,
         diploma: "",
         inscription_period: "",
         allocation_type: "",
@@ -24,6 +25,9 @@ export default {
         },
         updateSpectacle(state, spectacle) {
             state.spectacle = spectacle
+        },
+        updateManager(state, manager) {
+            state.manager = manager
         },
         updateDiploma(state, diploma) {
             state.diploma = diploma
@@ -145,6 +149,20 @@ export default {
             //dispatch('getUncertain') ???
             //this.$router.push('results')
         },
+        submitManager({ commit, state }, manager) {
+            if (manager != state.manager) {
+                commit('updateManager', manager)
+                commit('updateChanged', true)
+            }
+            //if (state.filters.length == 0) { put those actions in the result component when loaded.
+            // dispatch('getFilters')
+            // //}
+            // dispatch('getResults')
+            // dispatch('getEligible')
+            // dispatch('getNonEligible')
+            //dispatch('getUncertain') ???
+            //this.$router.push('results')
+        },
     },
 
     getters: {
@@ -152,6 +170,7 @@ export default {
         changed: state => state.changed,
         disabled: state => state.disabled,
         spectacle: state => state.spectacle,
+        manager: state => state.manager,
         diploma: state => state.diploma,
         inscription_period: state => state.inscription_period,
         allocation_type: state => state.allocation_type,

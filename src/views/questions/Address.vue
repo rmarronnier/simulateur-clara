@@ -6,7 +6,7 @@
       <v-row>
         <v-col cols="12" md="8">
           <v-autocomplete
-            max-width="200px"
+            width="200px"
             v-model="address"
             :items="items"
             :loading="isLoading"
