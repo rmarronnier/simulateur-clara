@@ -18,6 +18,9 @@ export default {
   name: "Contract",
   components: {
     AidSummary
+  },
+  data() {
+    return {};
   }
 };
 </script>

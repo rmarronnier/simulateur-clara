@@ -44,6 +44,9 @@ export default {
     if (this.$store.state.results.filters_quantity == 0) {
       this.$store.dispatch("getFilters");
     }
+    if (this.$store.state.results.contracts_quantity == 0) {
+      this.$store.dispatch("getContracts");
+    }
     if (this.$store.state.situation.changed) {
       this.$store.dispatch("getResults");
     }

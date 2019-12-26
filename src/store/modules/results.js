@@ -1,4 +1,4 @@
-//import ClaraService from "@/api/clara";
+import * as clara from "@/services/clara";
 
 export default {
     state: {
@@ -6,6 +6,7 @@ export default {
         nonEligible: [],
         // uncertain: [], ???
         filters: [],
+        contracts: [],
     },
     mutations: {
         updateEligible(state, eligible) {
@@ -19,16 +20,23 @@ export default {
         // },
         updateFilters(state, filters) {
             state.filters = filters
+        },
+        updateContracts(state, contracts) {
+            state.contracts = contracts
         }
     },
     actions: {
-        // getFilters({ commit }) {
-        //     // promise + fetch + API call
-        // },
-        // getResults({ commit, dispatch }) {
-        //     // promise + fetch + API call
-        //     this.$store.commit("updateChanged", false)
-        // },
+        getFilters({ commit }) {
+            // promise + fetch + API call
+            commit("updateFilters", clara.filtersService());
+        },
+        getResults({ commit }) {
+            // promise + fetch + API call
+            commit("updateChanged", false);
+            commit("updateContracts", clara.contractsService());
+            commit("updateEligible", clara.aidsService(50));
+            commit("updateNonEligible", clara.aidsService(50));
+        },
     },
     getters: {
         eligible: state => state.eligible,
@@ -38,5 +46,7 @@ export default {
         //uncertain: state => state.uncertain,
         filters: state => state.filters,
         filters_quantity: state => state.filters.length,
+        contracts: state => state.contracts,
+        contracts_quantity: state => state.contracts.length,
     },
 }
