@@ -18,7 +18,7 @@ export default {
   margin-bottom: 15px;
 }
 .v-text-field {
-  font-size: 24px;
+  font-size: 26px;
 }
 
 v-card-title {

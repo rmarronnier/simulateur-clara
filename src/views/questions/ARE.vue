@@ -10,6 +10,8 @@
         min="0"
         type="number"
         label="Montant par mois"
+        outlined
+        color="black"
       ></v-text-field>
       <v-btn x-large class="ma-2" color="#96a8b2" @click="back">Revenir</v-btn>
       <v-btn

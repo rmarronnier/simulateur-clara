@@ -1,5 +1,5 @@
  <template>
-  <v-card align="center">
+  <v-card class="d-flex justify-center flex-column">
     <v-card-title class="display-1">Quel est votre âge ?</v-card-title>
 
     <v-form @submit.prevent="submitAge" ref="formAge" v-model="validity" :lazy-validation="lazy">

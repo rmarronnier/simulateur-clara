@@ -5,6 +5,8 @@
         <v-expansion-panel-header>Récapitulatif de ma situation</v-expansion-panel-header>
         <v-expansion-panel-content>
           <PersonalData />
+          <CurrentSituation />
+          <OtherSituations />
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
@@ -13,10 +15,14 @@
 
  <script>
 import PersonalData from "@/components/results/situation/PersonalData";
+import CurrentSituation from "@/components/results/situation/CurrentSituation";
+import OtherSituations from "@/components/results/situation/OtherSituations";
 export default {
   name: "Situation",
   components: {
-    PersonalData
+    PersonalData,
+    CurrentSituation,
+    OtherSituations
   }
 };
 </script>
