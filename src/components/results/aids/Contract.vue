@@ -1,12 +1,12 @@
  <template>
   <v-expansion-panels>
     <v-expansion-panel>
-      <v-expansion-panel-header>Nom du type d'aide</v-expansion-panel-header>
+      <v-expansion-panel-header>
+        <v-img src="@/assets/contracts/alternance.svg"></v-img>
+        {{ contractType }}
+      </v-expansion-panel-header>
       <v-expansion-panel-content>
-        <AidSummary></AidSummary>
-        <v-btn right>
-          <v-icon left>mdi-eye</v-icon>Voir
-        </v-btn>
+        <AidSummary v-for="aid in aids" :key="aid.name" v-bind:aid="aid"></AidSummary>
       </v-expansion-panel-content>
     </v-expansion-panel>
   </v-expansion-panels>
@@ -19,8 +19,11 @@ export default {
   components: {
     AidSummary
   },
-  data() {
-    return {};
+  props: {
+    contractType: String,
+    aids: {
+      type: Array
+    }
   }
 };
 </script>

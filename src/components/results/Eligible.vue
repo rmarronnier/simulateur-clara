@@ -1,12 +1,15 @@
 <template>
   <v-card>
-    Vous pouvez bénéficier de
-    **tout déplier**
     <v-expansion-panels>
       <v-expansion-panel>
-        <v-expansion-panel-header>Item</v-expansion-panel-header>
-        <v-expansion-panel-content v-for="(item,i) in 5" :key="i">
-          <Contract v-for="aid in aids" :key="aid"></Contract>
+        <v-expansion-panel-header>Vous pouvez bénéficier de**tout déplier**</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <Contract
+            v-for="(aids, contractType) in contracts"
+            :key="(contractType)"
+            v-bind:aids="aids"
+            v-bind:contractType="contractType"
+          ></Contract>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
@@ -19,13 +22,15 @@ export default {
   components: {
     Contract
   },
-  data() {
-    return {
-      aids: []
-    };
-  },
-  beforeCreate() {
-    this.aids = this.$store.state.results.eligible;
+  // data() {
+  //   return {
+  //     contracts: {}
+  //   };
+  // },
+  computed: {
+    contracts() {
+      return this.$store.state.results.eligible;
+    }
   }
 };
 </script>

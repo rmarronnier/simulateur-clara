@@ -137,7 +137,7 @@ function fakeAidSummaryGenerator() {
     var short_description = lorem.generateParagraphs(1);
     let allFilters = filtersService();
     let contracts = contractsService();
-    var contract = contracts[Math.floor(Math.random() * contracts.length)];
+    var contract = contracts[Math.floor(Math.random() * contracts.length)].name;
     let random_filter = Math.floor(Math.random() * allFilters.length);
     var filters = [allFilters[random_filter], allFilters[random_filter - 1]];
 
@@ -160,11 +160,13 @@ export function aidsService(quantity) {
         aidsArray[i] = fakeAidSummaryGenerator();
     }
 
-    let aidsSortedByContract = [];
+    let aidsSortedByContract = {}
+    contractsService().forEach(contract => {
+        aidsSortedByContract[contract.name] = []
+    });
     aidsArray.forEach(aid => {
         aidsSortedByContract[aid.contract].push(aid)
     });
-
 
     return aidsSortedByContract;
 
