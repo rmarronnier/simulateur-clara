@@ -37,7 +37,7 @@ export default {
     validity: false,
     rules: {
       min: v => v >= 16 || "doit être supérieur ou égal à 16",
-      max: v => v <= 100 || "doit être inférieur ou égal à 100"
+      max: v => v <= 70 || "doit être inférieur ou égal à 70"
     }
   }),
   methods: {
