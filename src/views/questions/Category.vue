@@ -57,10 +57,11 @@ export default {
 };
 </script>
  
- <style>
+ <style scoped>
 ul {
   list-style-type: none;
   border-left: 4px grey solid;
+  margin-left: 4px;
 }
 li {
   margin-top: 10px;
