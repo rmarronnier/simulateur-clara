@@ -1,5 +1,5 @@
  <template>
-  <v-footer color="secondary" dark app padless>
+  <v-footer color="secondary" dark app max-height="200px">
     <v-row justify="center" no-gutters>
       <ul>
         <li>Navigation sur Clara :</li>

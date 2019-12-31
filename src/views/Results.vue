@@ -16,7 +16,7 @@
           <Eligible></Eligible>
           <NonEligible></NonEligible>
           <v-alert type="info">
-            Simulation non contractuelle tenant compte des éléments déclarés et appréciés le 17/12/2019
+            Simulation non contractuelle tenant compte des éléments déclarés et appréciés le {{ new Date().toLocaleDateString() }}
             <br />Clara n'intègre pas encore les spécificités des aides et mesures applicables dans les régions et collectivités d'Outre Mer.
           </v-alert>
         </v-content>

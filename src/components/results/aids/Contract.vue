@@ -2,6 +2,7 @@
   <v-expansion-panels>
     <v-expansion-panel>
       <v-expansion-panel-header>
+        {{aids.length}}
         <v-img src="@/assets/contracts/alternance.svg"></v-img>
         {{ contractType }}
       </v-expansion-panel-header>

@@ -10,7 +10,7 @@ export default {
 };
 </script>
  
- <style>
+ <style scoped>
 .v-input--selection-controls.v-input .v-label {
   color: black;
   font-size: 24px;
