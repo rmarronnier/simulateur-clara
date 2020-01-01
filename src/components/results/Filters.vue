@@ -28,8 +28,13 @@ export default {
     allocation_type: ""
   }),
   computed: {
-    filters() {
-      return this.store.state.results.filters;
+    filters: {
+      get() {
+        return this.$store.state.results.filters;
+      },
+      set(value) {
+        this.$store.commit("updateFilters", value);
+      }
     }
   }
 };

@@ -66,7 +66,7 @@ export function filtersService() {
         {
             name: "travailler-en-alternance",
             description: "Travailler en alternance",
-            value: false
+            value: true
         },
         {
             name: "s-informer-sur-contrats-specifiques",
@@ -111,7 +111,7 @@ export function filtersService() {
         {
             name: "se-former-valoriser-ses-competences",
             description: "Financer une formation, obtenir un diplôme",
-            value: false
+            value: true
         }
     ];
 

@@ -27,6 +27,15 @@ export default {
   //     contracts: {}
   //   };
   // },
+  methods: {
+    // hasOneTrueFilter(aid) {
+    //   let values = [];
+    //   aid.filters.forEach(filter => {
+    //     values.push(filter.value);
+    //   });
+    //   return values.include(true);
+    // }
+  },
   computed: {
     contracts() {
       return this.$store.state.results.eligible;
