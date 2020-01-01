@@ -1,25 +1,25 @@
 <template>
   <v-app>
-    <TopBar />
+    <!-- <TopBar /> -->
     <v-content>
       <Simulator />
     </v-content>
-    <Footer />
+    <!-- <Footer /> -->
   </v-app>
 </template>
 
 <script>
 import Simulator from "./components/Simulator";
-import TopBar from "./components/TopBar";
-import Footer from "./components/Footer";
+// import TopBar from "./components/TopBar";
+// import Footer from "./components/Footer";
 
 export default {
   name: "App",
 
   components: {
     Simulator,
-    TopBar,
-    Footer
+    // TopBar,
+    // Footer
   },
 
   data: () => ({

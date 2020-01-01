@@ -2,7 +2,7 @@
   <v-card>
     <v-expansion-panels>
       <v-expansion-panel>
-        <v-expansion-panel-header>Récapitulatif de ma situation</v-expansion-panel-header>
+        <v-expansion-panel-header class="display-1">Récapitulatif de ma situation</v-expansion-panel-header>
         <v-expansion-panel-content>
           <PersonalData />
           <CurrentSituation />

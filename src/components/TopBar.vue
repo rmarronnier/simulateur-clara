@@ -1,5 +1,5 @@
  <template>
-  <v-app-bar app color="primary" dark>
+  <v-app-bar class="display-1 justify-center align-center" app color="primary" dark>
     <div class="d-flex align-center">
       <v-img alt="Clara Logo" contain src="@/assets/clara-logo.svg" transition="scale-transition" />
 
@@ -14,6 +14,10 @@ export default {
 };
 </script>
  
- <style>
+ <style scoped>
+header {
+display: flex;
+justify-content: center;
+}
 </style>
  
