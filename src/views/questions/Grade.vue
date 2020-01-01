@@ -1,8 +1,8 @@
  <template>
-  <v-card align="center">
+  <v-card class="pa-4" align="center">
     <v-form @submit.prevent="submitDiploma" ref="formGrade" v-model="validity">
-      Quel est le diplôme le plus élevé que vous ayez obtenu ?
-      <v-radio-group required :rules="rules" v-model="diploma">
+      <v-card-title class="display-1 justify-center align-center">Quel est le diplôme le plus élevé que vous ayez obtenu ?</v-card-title>
+      <v-radio-group class="justify-center align-center" required :rules="rules" v-model="diploma">
         <v-radio autofocus label="Bac +4 et + (Master) / diplômes d’ingénieur" value="level_1"></v-radio>
         <v-radio label="Bac +3 (Licence)" value="level_2"></v-radio>
         <v-radio label="Bac +1 à bac +2 (BTS / DUT)" value="level_3"></v-radio>

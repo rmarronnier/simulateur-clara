@@ -1,10 +1,12 @@
  <template>
-  <v-card align="center">
+  <v-card class="pa-4" align="center">
+    <v-card-title class="display-1 justify-center align-center">Quelle allocation percevez-vous actuellement ?</v-card-title>
     <v-form @submit.prevent="submitAllocation" ref="formAllocation" v-model="validity">
-      Quelle allocation percevez-vous actuellement ?
+          
+
       <v-row>
         <v-col>
-          <v-radio-group required :rules="rules" v-model="allocation_type">
+          <v-radio-group class="justify-center align-center" required :rules="rules" v-model="allocation_type">
             <v-radio
               autofocus
               label="Une prestation d’assurance chômage : ARE / ASP"

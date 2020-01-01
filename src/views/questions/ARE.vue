@@ -1,7 +1,8 @@
  <template>
-  <v-card align="center">
+  <v-card pa-4 align="center">
     <v-form @submit.prevent="submitARE" ref="formARE" v-model="validity" :lazy-validation="lazy">
-      Quel est le montant de cette allocation ?
+      <v-card-title class="display-1 justify-center align-center">Quel est le montant de cette allocation ?</v-card-title>
+      
       <v-text-field
         v-model.number="monthly_allocation_value"
         autofocus
@@ -54,5 +55,10 @@ export default {
 };
 </script>
  
- <style>
+ <style scoped>
+  .v-text-field--outlined {
+   margin-top: 20px;
+   margin-bottom: 20px;
+   width: 20%;
+ }
 </style>

@@ -1,15 +1,18 @@
  <template>
-  <v-card align="center">
+  <v-card class="pa-4" align="center">
     <v-form @submit.prevent="submitOther" ref="formOther" v-model="validity">
-      Êtes-vous dans l'une des situations suivantes ?
+      <v-card-title class="display-1 justify-center align-center">Êtes-vous dans l'une des situations suivantes ?</v-card-title>
+      
       Cochez la ou les situations correspondantes
-      <v-checkbox autofocus v-model="spectacle" label="Artiste ou technicien•ne du spectacle"></v-checkbox>
+      <div class="justify-center align-center check-group">      
+        <v-checkbox autofocus v-model="spectacle" label="Artiste ou technicien•ne du spectacle"></v-checkbox>
       <v-checkbox
         v-model="disabled"
         label="Bénéficiaire de l'obligation d'emploi (reconnu•e en situation de handicap)"
       ></v-checkbox>
       <v-checkbox v-model="manager" label="Cadre et/ou en recherche d'un poste d'encadrement"></v-checkbox>
       <v-checkbox v-model="none" label="Je ne suis dans aucune de ces situations"></v-checkbox>
+      </div>
       <v-btn x-large class="ma-2" color="#96a8b2" @click="back">Revenir</v-btn>
       <v-btn
         x-large
@@ -84,4 +87,7 @@ export default {
 </script>
  
  <style>
+ .check-group {
+   width: 50%;
+ }
 </style>

@@ -1,8 +1,8 @@
  <template>
-  <v-card align="center">
+  <v-card class="pa-4" align="center">
     <v-form @submit.prevent="submitCategory" ref="formCategory" v-model="validity">
-      Êtes-vous actuellement dans l'une des situations suivantes ?
-      <v-radio-group required :rules="rules" v-model="category">
+      <v-card-title class="display-1 justify-center align-center">Êtes-vous actuellement dans l'une des situations suivantes ?</v-card-title>
+      <v-radio-group class="justify-center align-center" required :rules="rules" v-model="category">
         <v-radio autofocus value="categories_12345">
           <template v-slot:label>
             <ul>

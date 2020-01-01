@@ -1,9 +1,10 @@
  <template>
-  <v-card class="d-flex justify-center flex-column">
-    <v-card-title class="display-1">Quel est votre âge ?</v-card-title>
+  <v-card align="center" class="pa-4 d-flex justify-center flex-column">
+    <v-card-title class="display-1 justify-center align-center">Quel est votre âge ?</v-card-title>
 
     <v-form @submit.prevent="submitAge" ref="formAge" v-model="validity" :lazy-validation="lazy">
       <v-text-field
+      class="display-1 justify-center align-center"
         required
         autofocus
         outlined
@@ -58,5 +59,10 @@ export default {
 };
 </script>
  
- <style>
+ <style scss scoped>
+ .v-text-field--outlined {
+   margin-top: 20px;
+   margin-bottom: 20px;
+   width: 20%;
+ }
 </style>

@@ -1,7 +1,7 @@
  <template>
-  <v-card align="center">
-    <v-card-title text-align="center">Quel est le code postal de votre lieu de résidence ?</v-card-title>
-    <v-card-subtitle>Code postal - facultatif</v-card-subtitle>
+  <v-card class="pa-4" align="center">
+    <v-card-title class="display-1 justify-center align-center">Quel est le code postal de votre lieu de résidence ?</v-card-title>
+    Code postal - facultatif
     <v-form align="center" @submit.prevent="submitAddress" ref="formAddress" v-model="validity">
       <v-row>
         <v-col cols="12" md="8">
