@@ -2,10 +2,11 @@
   <v-card>
     <v-expansion-panels>
       <v-expansion-panel>
-        <v-expansion-panel-header>Ouvrir les filtres</v-expansion-panel-header>
+        <v-expansion-panel-header class="title">Ouvrir les filtres</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-form>
-            Chercher les aides pour
+            <h3>Chercher les aides pour</h3>
+
             <v-checkbox
               v-for="filter in filters"
               :key="filter.name"

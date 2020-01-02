@@ -1,11 +1,12 @@
 <template>
   <v-card>
-    Vous ne pouvez pas bénéficier de
-    <v-btn @click="showResults">Voir</v-btn>
-    <v-expansion-panels v-if="shown">
+    <v-expansion-panels>
       <v-expansion-panel>
-        <v-expansion-panel-header>Item</v-expansion-panel-header>
-        <v-expansion-panel-content>
+        <v-expansion-panel-header class="title">
+          Vous ne pouvez pas bénéficier de
+          <v-btn @click="showResults" class="ml-5">Voir</v-btn>
+        </v-expansion-panel-header>
+        <v-expansion-panel-content v-if="shown">
           <Contract
             v-for="(aids, contractType) in contracts"
             :key="(contractType)"

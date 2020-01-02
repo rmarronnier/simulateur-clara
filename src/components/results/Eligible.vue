@@ -2,7 +2,7 @@
   <v-card>
     <v-expansion-panels>
       <v-expansion-panel>
-        <v-expansion-panel-header>Vous pouvez bénéficier de**tout déplier**</v-expansion-panel-header>
+        <v-expansion-panel-header class="title">Vous pouvez bénéficier de</v-expansion-panel-header>
         <v-expansion-panel-content>
           <Contract
             v-for="(aids, contractType) in contracts"
