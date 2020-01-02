@@ -4,7 +4,7 @@
       <v-expansion-panel>
         <v-expansion-panel-header class="title">
           Vous ne pouvez pas bénéficier de
-          <v-btn @click="showResults" class="ml-5">Voir</v-btn>
+          <v-btn @click="showResults" class="ml-5 small-sized">Voir</v-btn>
         </v-expansion-panel-header>
         <v-expansion-panel-content v-if="shown">
           <Contract

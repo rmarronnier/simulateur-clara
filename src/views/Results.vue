@@ -1,9 +1,5 @@
 <template>
   <v-container>
-    <v-btn>
-      Imprimer
-      <v-icon right>mdi-printer</v-icon>
-    </v-btn>
     <v-row>
       <v-col cols="6" md="4">
         <v-content>
@@ -14,8 +10,8 @@
       <v-col cols="12" md="8">
         <v-content>
           <Eligible></Eligible>
-          <NonEligible></NonEligible>
-          <v-alert type="info">
+          <NonEligible class="mt-5"></NonEligible>
+          <v-alert class="mt-5" type="info">
             Simulation non contractuelle tenant compte des éléments déclarés et appréciés le {{ new Date().toLocaleDateString() }}
             <br />Clara n'intègre pas encore les spécificités des aides et mesures applicables dans les régions et collectivités d'Outre Mer.
           </v-alert>
